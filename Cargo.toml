@@ -1,0 +1,16 @@
+[package]
+name = "libarchive-rs"
+version = "0.1.0"
+authors = ["Sergei Solodovnikov <sergei@isolo.me>"]
+edition = "2018"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[target.'cfg(target_family="unix")'.dependencies]
+file-descriptor = { git = "https://github.com/Seeneva/file-descriptor-rs.git", branch = "main" }
+
+[dependencies]
+thiserror = "1.0"
+libc = "0.2"
+libarchive-sys = { git = "https://github.com/Seeneva/libarchive-sys.git", branch = "main" }
